@@ -1,6 +1,6 @@
 --Intermediate SQL--
 
-					-- UNION (to get data to same colunm as left table)--
+								-- UNION (to get data to same colunm as left table)--
 create table tblperson2(ID int, Name nvarchar(20), email  nvarchar(20))
 insert into tblperson2 values (15, 'Jack', 'Jack@gmail.com',1,22,'HCM','Male',3000,2,9)
 insert into tblperson2 values (16, 'Rose', 'Rose@gmail.com',2,23,'HCM','Female',3500,2,9)
@@ -28,7 +28,7 @@ union all
 select * from tblperson2
 order by ID
 
-									--CASE STATEMENT--
+										--CASE STATEMENT--
 --The CASE statement goes through conditions and returns a value when the first condition is met. 
 --So, once a condition is true, it will stop reading and return the result. 
 --If no conditions are true, it returns the value in the ELSE clause.
@@ -43,7 +43,7 @@ from tblperson
 		on tblperson.departmentid = tbldepartment.id
 
 
-									-- ALIAS--
+										-- ALIAS--
 select name + ' ' + departmentname as PersonSummary
 from tblperson
 		join tblDepartment --join/right join etc.
@@ -62,7 +62,7 @@ from tblperson a
 	left join tblperson d
 	on a.managerID=d.ID
 
-							---PARTITION BY---
+										---PARTITION BY---
 -- with group by
 select DepartmentName,count(name) as Depatment_EmpolyeeAmount from tblperson a
 left join tblDepartment b
